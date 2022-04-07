@@ -56,7 +56,7 @@ def loss(target_features, combination_features):
     return loss
 
 
-def rebuild_vgg(max_layer_idx) -> OrderedDict[str, nn.Module]:
+def rebuild_vgg(max_layer_idx):
     cnn = models.vgg19(pretrained=True).features.to(device).eval()
     layers = OrderedDict()
     i = 0
